@@ -30,7 +30,7 @@ const CONFIG = {
   },
 
   // Tracker Storage Key
-  storageKey: 'cocial-cleaner-progress',
+  storageKey: 'social-cleaner-progress',
 
   // Modal Animation Duration
   modalAnimationDuration: 250,
