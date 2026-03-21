@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СоцЧистка — Управление аккаунтами</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+  </head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<header class="header">
+  <div class="logo">Соц<span>Чистка</span></div>
+  <a class="donate-link" href="https://yoomoney.ru/to/4100119327401692" target="_blank">ЮMoney Пожертвование на поддержку проекта</a>
+  <div class="badge">⚠ Инструмент конфиденциальности</div>
+</header>
+
+<section class="hero">
+  <h1>Очистите свои<br><span class="line-accent">аккаунты</span><br>от старого контента</h1>
+  <p>Пошаговые инструкции и прямые ссылки для удаления лайков, постов и нежелательного контента на ВКонтакте, Одноклассниках, TikTok, Instagram, YouTube и других платформах.</p>
+  <div class="warning-box">
+    <span class="icon">⚡</span>
+    <p><strong>Как работает этот инструмент:</strong> Большинство платформ не разрешают сторонним сайтам управлять вашим аккаунтом напрямую. Здесь собраны точные инструкции, прямые ссылки и скрипты для браузера — всё, что нужно для быстрой очистки.</p>
+  </div>
+</section>
+
+<!-- Progress Tracker -->
+<section class="tracker-section">
+  <div class="section-title">Прогресс очистки</div>
+  <div class="tracker-grid" id="trackerGrid">
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="ВКонтакте">
+      <div class="platform-name">🔵 ВКонтакте <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="Одноклассники">
+      <div class="platform-name">🟠 Одноклассники <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="TikTok">
+      <div class="platform-name">⚫ TikTok <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="Instagram">
+      <div class="platform-name">🟣 Instagram <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="YouTube">
+      <div class="platform-name">🔴 YouTube <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="Telegram">
+      <div class="platform-name">🔷 Telegram <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+    <div class="tracker-item" onclick="toggleDone(this)" data-name="Twitter/X">
+      <div class="platform-name">⬛ Twitter/X <div class="check">✓</div></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="tracker-label">Нажмите после завершения</div>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Cards -->
+<div class="main">
+
+  <!-- VK -->
+  <div class="platform-card" style="border-top: 2px solid var(--vk);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(0,119,255,0.15);">🔵</div>
+      <div>
+        <h3>ВКонтакте</h3>
+        <div class="sub">vk.com</div>
+      </div>
+      <span class="availability available">Доступно</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-green"></span>Удаление своих постов — полностью доступно</li>
+        <li><span class="dot dot-green"></span>Поиск и удаление лайков через историю</li>
+        <li><span class="dot dot-yellow"></span>Массовое удаление — через скрипт</li>
+        <li><span class="dot dot-green"></span>Очистка комментариев — доступно</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://vk.com/feed?section=likes" target="_blank" class="btn btn-primary">→ Мои лайки на VK</a>
+        <a href="https://vk.com/id?section=all" target="_blank" class="btn btn-secondary">Мои посты</a>
+        <button class="btn btn-outline" onclick="openModal('vkScript')">📋 Скрипт массового удаления</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OK -->
+  <div class="platform-card" style="border-top: 2px solid var(--ok);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(247,147,30,0.15);">🟠</div>
+      <div>
+        <h3>Одноклассники</h3>
+        <div class="sub">ok.ru</div>
+      </div>
+      <span class="availability available">Доступно</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-green"></span>Удаление постов с личной страницы</li>
+        <li><span class="dot dot-yellow"></span>Лайки — только через историю активности</li>
+        <li><span class="dot dot-green"></span>Удаление фото и видео</li>
+        <li><span class="dot dot-yellow"></span>Комментарии — ручное удаление</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://ok.ru/profile/statistic" target="_blank" class="btn btn-primary">→ Активность в OK</a>
+        <a href="https://ok.ru/profile" target="_blank" class="btn btn-secondary">Моя страница</a>
+        <button class="btn btn-outline" onclick="openModal('okInfo')">ℹ️ Подробная инструкция</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TikTok -->
+  <div class="platform-card" style="border-top: 2px solid var(--tiktok);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(255,0,80,0.12);">⚫</div>
+      <div>
+        <h3>TikTok</h3>
+        <div class="sub">tiktok.com</div>
+      </div>
+      <span class="availability partial">Частично</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-green"></span>Список понравившихся видео — в приложении</li>
+        <li><span class="dot dot-yellow"></span>Отмена лайков — по одному вручную</li>
+        <li><span class="dot dot-green"></span>Удаление своих видео — доступно</li>
+        <li><span class="dot dot-red"></span>Массовый снос лайков — ограничен</li>
+      </ul>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="openModal('tiktokSteps')">📱 Инструкция по шагам</button>
+        <a href="https://www.tiktok.com/setting" target="_blank" class="btn btn-secondary">Настройки TikTok</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instagram -->
+  <div class="platform-card" style="border-top: 2px solid var(--ig);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(225,48,108,0.12);">🟣</div>
+      <div>
+        <h3>Instagram</h3>
+        <div class="sub">instagram.com</div>
+      </div>
+      <span class="availability partial">Частично</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-yellow"></span>Лайки — через «Скачать данные»</li>
+        <li><span class="dot dot-green"></span>Удаление своих постов и сторис</li>
+        <li><span class="dot dot-yellow"></span>Снятие лайков — по одному</li>
+        <li><span class="dot dot-green"></span>Очистка через официальный экспорт данных</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://www.instagram.com/download/request/" target="_blank" class="btn btn-primary">📥 Запросить архив данных</a>
+        <button class="btn btn-secondary" onclick="openModal('igSteps')">Инструкция по шагам</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube -->
+  <div class="platform-card" style="border-top: 2px solid var(--yt);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(255,0,0,0.12);">🔴</div>
+      <div>
+        <h3>YouTube</h3>
+        <div class="sub">youtube.com</div>
+      </div>
+      <span class="availability available">Доступно</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-green"></span>История лайков — в Google аккаунте</li>
+        <li><span class="dot dot-green"></span>Удаление из «Понравившихся»</li>
+        <li><span class="dot dot-green"></span>Очистка истории просмотров</li>
+        <li><span class="dot dot-green"></span>Удаление комментариев</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://www.youtube.com/playlist?list=LL" target="_blank" class="btn btn-primary">→ Мои лайки YouTube</a>
+        <a href="https://myactivity.google.com/product/youtube" target="_blank" class="btn btn-secondary">История активности</a>
+        <a href="https://www.youtube.com/feed/history" target="_blank" class="btn btn-outline">История просмотров</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegram -->
+  <div class="platform-card" style="border-top: 2px solid var(--telegram);">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(34,158,217,0.12);">🔷</div>
+      <div>
+        <h3>Telegram</h3>
+        <div class="sub">telegram.org</div>
+      </div>
+      <span class="availability available">Доступно</span>
+    </div>
+    <div class="card-body">
+      <ul class="action-list">
+        <li><span class="dot dot-green"></span>Удаление сообщений у всех — навсегда</li>
+        <li><span class="dot dot-green"></span>Очистка истории чатов</li>
+        <li><span class="dot dot-yellow"></span>Реакции — только ручное снятие</li>
+        <li><span class="dot dot-green"></span>Удаление из каналов/групп</li>
+      </ul>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="openModal('tgSteps')">📋 Инструкция Telegram</button>
+        <a href="https://my.telegram.org" target="_blank" class="btn btn-secondary">Управление аккаунтом</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Twitter/X -->
+  <div class="platform-card card-wide" style="border-top: 2px solid #555;">
+    <div class="card-header">
+      <div class="platform-icon" style="background: rgba(255,255,255,0.08);">⬛</div>
+      <div>
+        <h3>Twitter&nbsp;/&nbsp;X</h3>
+        <div class="sub">x.com&nbsp;(twitter.com)</div>
+      </div>
+      <span class="availability partial">Частично</span>
+    </div>
+    <div class="card-body">
+      <div class="wide-grid">
+        <div class="step-block">
+          <h4>🤍 Удаление лайков</h4>
+          <ol class="step-list">
+            <li>Откройте профиль → вкладка «Нравится»</li>
+            <li>Каждый лайк снимается вручную кликом на ♥</li>
+            <li>Для массового удаления — запросить архив данных</li>
+            <li>В архиве найти файл like.js со списком всех лайков</li>
+          </ol>
+        </div>
+        <div class="step-block">
+          <h4>🗑 Удаление твитов</h4>
+          <ol class="step-list">
+            <li>Настройки → Ваш аккаунт → Архив данных</li>
+            <li>Скачать архив (24-48 часов ожидания)</li>
+            <li>Использовать инструмент TweetDelete.net</li>
+            <li>Или удалять вручную через поиск профиля</li>
+          </ol>
+        </div>
+      </div>
+      <div class="btn-group" style="flex-direction: row; margin-top: 16px; flex-wrap: wrap;">
+        <a href="https://x.com/settings/download_your_data" target="_blank" class="btn btn-primary" style="flex:1; min-width:200px;">📥 Архив данных X</a>
+        <a href="https://x.com/i/likes" target="_blank" class="btn btn-secondary" style="flex:1; min-width:200px;">Мои лайки</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Tips -->
+<section class="tips-section">
+  <div class="section-title">Советы по безопасности</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🔒</div>
+      <h4>Начните с архива данных</h4>
+      <p>Перед удалением запросите архив на каждой платформе. Так вы получите полный список того, что нужно удалить.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚡</div>
+      <h4>Не торопитесь</h4>
+      <p>Платформы блокируют быстрые массовые действия. Делайте паузы по 2-3 секунды между удалениями, чтобы не попасть в временный бан.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">👁</div>
+      <h4>Закрытый аккаунт — первый шаг</h4>
+      <p>Пока идёт очистка, переведите аккаунты в закрытый режим. Это скроет контент от посторонних на время работы.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🗂</div>
+      <h4>Системный подход</h4>
+      <p>Используйте трекер выше. Отмечайте платформы по мере завершения, чтобы не упустить ни одну.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Browser Script Section -->
+<section class="script-section">
+  <div class="section-title">Скрипты для браузера</div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('vk')">ВКонтакте</button>
+    <button class="tab" onclick="switchTab('yt')">YouTube</button>
+    <button class="tab" onclick="switchTab('info')">Как использовать</button>
+  </div>
+
+  <div id="tab-vk" class="tab-content active">
+    <div class="script-box">
+      <div class="script-top">
+        <span class="lang">// JavaScript — Консоль браузера (F12)</span>
+        <button class="copy-btn" onclick="copyScript('vkCode')">Копировать</button>
+      </div>
+      <pre id="vkCode"><span class="comment">// Скрипт для VK — прокрутка и удаление лайков со страницы ленты</span>
+<span class="comment">// Откройте vk.com/feed?section=likes, затем вставьте в консоль (F12)</span>
+
+<span class="keyword">async function</span> <span class="fn">removeLikesVK</span>() {
+  <span class="keyword">const</span> delay = ms => <span class="keyword">new</span> <span class="fn">Promise</span>(r => setTimeout(r, ms));
+  <span class="keyword">let</span> count = 0;
+
+  <span class="keyword">while</span> (true) {
+    <span class="comment">// Находим все кнопки "лайк" (активные)</span>
+    <span class="keyword">const</span> likeButtons = document.<span class="fn">querySelectorAll</span>(
+      <span class="string">'.PostButtonReactions--liked, .like_btn.active'</span>
+    );
+
+    <span class="keyword">if</span> (likeButtons.length === 0) {
+      console.<span class="fn">log</span>(<span class="string">`✅ Готово! Снято лайков: ${count}`</span>);
+      <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">for</span> (<span class="keyword">const</span> btn <span class="keyword">of</span> likeButtons) {
+      btn.<span class="fn">click</span>();
+      count++;
+      console.<span class="fn">log</span>(<span class="string">`❌ Лайк снят #${count}`</span>);
+      <span class="keyword">await</span> <span class="fn">delay</span>(1500); <span class="comment">// Пауза 1.5 сек</span>
+    }
+
+    <span class="comment">// Прокрутить страницу вниз для загрузки новых</span>
+    window.<span class="fn">scrollBy</span>(0, 1000);
+    <span class="keyword">await</span> <span class="fn">delay</span>(2000);
+  }
+}
+
+<span class="fn">removeLikesVK</span>();</pre>
+    </div>
+  </div>
+
+  <div id="tab-yt" class="tab-content">
+    <div class="script-box">
+      <div class="script-top">
+        <span class="lang">// JavaScript — YouTube Liked Videos</span>
+        <button class="copy-btn" onclick="copyScript('ytCode')">Копировать</button>
+      </div>
+      <pre id="ytCode"><span class="comment">// Скрипт для YouTube — удаление видео из "Понравившихся"</span>
+<span class="comment">// Откройте youtube.com/playlist?list=LL → вставьте в консоль (F12)</span>
+
+<span class="keyword">async function</span> <span class="fn">removeYTLikes</span>() {
+  <span class="keyword">const</span> delay = ms => <span class="keyword">new</span> <span class="fn">Promise</span>(r => setTimeout(r, ms));
+  <span class="keyword">let</span> removed = 0;
+
+  <span class="keyword">while</span> (true) {
+    <span class="comment">// Меню трёх точек у первого видео в списке</span>
+    <span class="keyword">const</span> menuBtn = document.<span class="fn">querySelector</span>(
+      <span class="string">'ytd-playlist-video-renderer:first-child #button[aria-label]'</span>
+    );
+
+    <span class="keyword">if</span> (!menuBtn) {
+      console.<span class="fn">log</span>(<span class="string">`✅ Завершено. Удалено: ${removed}`</span>);
+      <span class="keyword">break</span>;
+    }
+
+    menuBtn.<span class="fn">click</span>();
+    <span class="keyword">await</span> <span class="fn">delay</span>(800);
+
+    <span class="comment">// Найти пункт "Удалить из Понравившихся"</span>
+    <span class="keyword">const</span> items = [...document.<span class="fn">querySelectorAll</span>(<span class="string">'ytd-menu-service-item-renderer'</span>)];
+    <span class="keyword">const</span> removeItem = items.<span class="fn">find</span>(i => i.innerText.<span class="fn">includes</span>(<span class="string">'Удалить'</span>));
+
+    <span class="keyword">if</span> (removeItem) {
+      removeItem.<span class="fn">click</span>();
+      removed++;
+      console.<span class="fn">log</span>(<span class="string">`🗑 Удалено #${removed}`</span>);
+    }
+
+    <span class="keyword">await</span> <span class="fn">delay</span>(1200);
+  }
+}
+
+<span class="fn">removeYTLikes</span>();</pre>
+    </div>
+  </div>
+
+  <div id="tab-info" class="tab-content">
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+      <h4 style="font-family: 'Unbounded', sans-serif; font-size: 1rem; margin-bottom: 16px;">Как использовать скрипты</h4>
+      <ol class="step-list" style="max-width: 560px;">
+        <li>Откройте нужный сайт в браузере (Chrome или Firefox)</li>
+        <li>Нажмите <strong>F12</strong> для открытия инструментов разработчика</li>
+        <li>Перейдите на вкладку <strong>Console</strong> (Консоль)</li>
+        <li>Скопируйте нужный скрипт кнопкой «Копировать»</li>
+        <li>Вставьте скрипт в поле консоли и нажмите <strong>Enter</strong></li>
+        <li>Следите за прогрессом в консоли — каждое действие логируется</li>
+        <li>Чтобы остановить — обновите страницу (F5)</li>
+      </ol>
+      <div class="warning-box" style="margin-top: 20px; margin-bottom: 0;">
+        <span class="icon">⚠️</span>
+        <p>Скрипты работают только на страницах, где вы авторизованы. Не запускайте их на чужих сайтах или незнакомых ссылках.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer footer__wrap">
+  <p>СоцЧистка — <span class="accent">локальный инструмент</span>. Никакие данные не передаются. Всё работает в вашем браузере.</p>
+  <p style="color: var(--muted); font-size: 0.75rem;">Работает на: ВК · ОК · TikTok · Instagram · YouTube · Telegram · Twitter/X</p>
+</footer>
+
+<!-- Modals -->
+<div class="modal-overlay" id="modal-vkScript" onclick="closeModal('vkScript')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal('vkScript')">✕</button>
+    <h3>🔵 VK — Массовое удаление</h3>
+    <p>ВКонтакте позволяет управлять активностью через консоль браузера. Скрипт ниже автоматически снимает лайки на загруженной странице.</p>
+    <ol class="step-list">
+      <li>Откройте <strong>vk.com/feed?section=likes</strong></li>
+      <li>Нажмите F12 → перейдите в «Консоль»</li>
+      <li>Скопируйте скрипт из раздела «Скрипты для браузера»</li>
+      <li>Вставьте и нажмите Enter. Скрипт запустится автоматически</li>
+      <li>Для постов: зайдите на свою страницу, откройте консоль и аналогично</li>
+    </ol>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-okInfo" onclick="closeModal('okInfo')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal('okInfo')">✕</button>
+    <h3>🟠 Одноклассники — Инструкция</h3>
+    <p>В OK нет отдельного раздела с лайками, но есть несколько способов найти активность:</p>
+    <ol class="step-list">
+      <li>Зайдите в «Мой профиль» → «Активность» — там история действий</li>
+      <li>Для удаления постов: профиль → найдите пост → три точки → «Удалить»</li>
+      <li>Фото: Фото → выберите → «Удалить фото»</li>
+      <li>Комментарии: найдите через уведомления или историю</li>
+      <li>Запросить данные: ok.ru/settings → «Скачать данные»</li>
+    </ol>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-tiktokSteps" onclick="closeModal('tiktokSteps')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal('tiktokSteps')">✕</button>
+    <h3>⚫ TikTok — Удаление лайков</h3>
+    <p>TikTok ограничивает массовые действия, но вот самый быстрый способ:</p>
+    <ol class="step-list">
+      <li>Откройте приложение TikTok → Профиль</li>
+      <li>Нажмите на вкладку ♥ (Понравившееся)</li>
+      <li>Для каждого видео: нажмите и удерживайте → «Убрать из понравившихся»</li>
+      <li>Для удаления своих видео: три точки на видео → «Удалить»</li>
+      <li>Через веб: tiktok.com/profile → раздел Liked Videos</li>
+      <li>Можно запросить архив данных в Настройки → Конфиденциальность → Данные</li>
+    </ol>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-igSteps" onclick="closeModal('igSteps')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal('igSteps')">✕</button>
+    <h3>🟣 Instagram — Управление активностью</h3>
+    <p>Instagram скрывает лайки — лучший способ найти их через архив данных:</p>
+    <ol class="step-list">
+      <li>Настройки → «Ваша деятельность» → «Скачать данные»</li>
+      <li>Выберите JSON формат, укажите email → «Запросить скачивание»</li>
+      <li>Через 24-48 ч придёт файл — в нём все лайки и комментарии</li>
+      <li>Для удаления постов: профиль → три точки → «Удалить»</li>
+      <li>Сторис: автоматически удаляются через 24 ч, но архив хранится</li>
+      <li>Комментарии: Настройки → Ваша деятельность → Комментарии</li>
+    </ol>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-tgSteps" onclick="closeModal('tgSteps')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal('tgSteps')">✕</button>
+    <h3>🔷 Telegram — Удаление контента</h3>
+    <p>В Telegram можно удалить сообщения у всех участников без ограничений по времени (в личных чатах):</p>
+    <ol class="step-list">
+      <li>В личном чате: зажмите сообщение → «Удалить» → «Для всех»</li>
+      <li>В группах: можно удалить только свои сообщения (не у всех)</li>
+      <li>Очистить всю историю с собой: чат «Избранное» → очистить</li>
+      <li>Удалить аккаунт полностью: my.telegram.org → Delete Account</li>
+      <li>Экспорт данных: Настройки → Конфиденциальность → Экспорт данных</li>
+    </ol>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

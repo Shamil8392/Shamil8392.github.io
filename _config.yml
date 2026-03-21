@@ -1,0 +1,66 @@
+# Site Configuration
+site:
+  title: СоцЧистка
+  description: Очистите свои аккаунты от старого контента
+  url: https://yourusername.github.io
+  baseurl: /cocial-cleaner
+  language: ru
+
+# Social Platforms
+platforms:
+  - name: ВКонтакте
+    id: vk
+    color: "#0077ff"
+    icon: 🔵
+    url: https://vk.com
+    
+  - name: Одноклассники
+    id: ok
+    color: "#f7931e"
+    icon: 🟠
+    url: https://ok.ru
+    
+  - name: TikTok
+    id: tiktok
+    color: "#ff0050"
+    icon: ⚫
+    url: https://tiktok.com
+    
+  - name: Instagram
+    id: instagram
+    color: "#e1306c"
+    icon: 🟣
+    url: https://instagram.com
+    
+  - name: YouTube
+    id: youtube
+    color: "#ff0000"
+    icon: 🔴
+    url: https://youtube.com
+    
+  - name: Telegram
+    id: telegram
+    color: "#229ed9"
+    icon: 🔷
+    url: https://telegram.org
+    
+  - name: Twitter/X
+    id: twitter
+    color: "#555555"
+    icon: ⬛
+    url: https://x.com
+
+# Scripts Configuration
+scripts:
+  vk:
+    delay: 1500
+    scrollDistance: 1000
+    
+  youtube:
+    delay: 1200
+
+# Analytics (optional)
+analytics:
+  enabled: false
+  # google_analytics: UA-XXXXXXXXX-X
+  # yandex_metrika: XXXXXXXX

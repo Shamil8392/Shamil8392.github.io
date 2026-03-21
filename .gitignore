@@ -1,0 +1,39 @@
+# Зависимости
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Логи и файлы окружения
+.env
+.env.local
+.env.*.local
+*.log
+
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Временные файлы
+tmp/
+temp/
+.cache/
+
+# Сборка и дистрибутив
+dist/
+build/
+out/
+
+# Тесты и покрытие
+coverage/
+.nyc_output/
+
+# Прочее
+*.bak
+*.tmp
+.queue/

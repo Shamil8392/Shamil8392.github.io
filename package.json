@@ -1,0 +1,25 @@
+{
+  "name": "cocial-cleaner",
+  "version": "1.0.0",
+  "description": "СоцЧистка — Управление аккаунтами. Очистите свои аккаунты от старого контента",
+  "author": "Shamil Galimov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "serve": "npx http-server -p 8080",
+    "deploy": "echo 'Deploy to GitHub Pages'"
+  },
+  "keywords": [
+    "social-media",
+    "privacy",
+    "cleanup",
+    "vk",
+    "instagram",
+    "tiktok",
+    "youtube",
+    "telegram"
+  ]
+}

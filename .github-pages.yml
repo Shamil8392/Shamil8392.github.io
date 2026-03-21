@@ -1,0 +1,29 @@
+# GitHub Pages Configuration
+# https://pages.github.com/
+
+# Base configuration
+base_url: /cocial-cleaner/
+
+# Build settings
+source: .
+destination: ./_site
+
+# Include static files
+include:
+  - css
+  - js
+  - img
+
+# Files to exclude from deployment
+exclude:
+  - .gitignore
+  - .qoder
+  - README.md
+  - package.json
+  - "*.md"
+
+# Default branch for GitHub Pages
+branch: main
+
+# Custom domain (optional)
+# domain: yourdomain.com
