@@ -1,4 +1,14 @@
-*, *::before, *::after {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -27,6 +37,7 @@ body::before {
 .blob {
   position: fixed;
   border-radius: 50%;
+  -webkit-filter: blur(80px);
   filter: blur(80px);
   opacity: 0.12;
   pointer-events: none;
@@ -54,8 +65,14 @@ body::before {
   position: relative;
   z-index: 10;
   padding: 40px 48px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -96,9 +113,18 @@ body::before {
 
 /* Hero */
 .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
   position: relative;
@@ -135,7 +161,11 @@ body::before {
   border: 1px solid rgba(255, 209, 102, 0.25);
   border-radius: 12px;
   padding: 16px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 12px;
   max-width: 680px;
@@ -144,6 +174,7 @@ body::before {
 
 .warning-box .icon {
   font-size: 1.2rem;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -160,8 +191,11 @@ body::before {
   position: relative;
   z-index: 10;
   padding: 0 48px 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 16px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -170,7 +204,11 @@ body::before {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
@@ -192,7 +230,9 @@ body::before {
   position: relative;
   z-index: 10;
   padding: 0 48px 80px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
@@ -203,18 +243,29 @@ body::before {
   border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
+  -webkit-transition: border-color 0.25s, -webkit-transform 0.25s, -webkit-box-shadow 0.25s;
+  transition: border-color 0.25s, -webkit-transform 0.25s, -webkit-box-shadow 0.25s;
+  -o-transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
   transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s, -webkit-transform 0.25s, -webkit-box-shadow 0.25s;
   cursor: default;
 }
 
 .platform-card:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
   transform: translateY(-4px);
+  -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .card-header {
   padding: 24px 24px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 14px;
   border-bottom: 1px solid var(--border);
@@ -224,10 +275,17 @@ body::before {
   width: 48px;
   height: 48px;
   border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 1.4rem;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -252,6 +310,7 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -283,7 +342,11 @@ body::before {
 }
 
 .action-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
   padding: 8px 0;
@@ -300,6 +363,7 @@ body::before {
   width: 7px;
   height: 7px;
   border-radius: 50%;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -320,14 +384,25 @@ body::before {
 }
 
 .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
 }
 
 .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 8px;
   padding: 11px 16px;
@@ -338,16 +413,24 @@ body::before {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.15s;
+  transition: opacity 0.2s, -webkit-transform 0.15s;
+  -o-transition: opacity 0.2s, transform 0.15s;
   transition: opacity 0.2s, transform 0.15s;
+  transition: opacity 0.2s, transform 0.15s, -webkit-transform 0.15s;
   letter-spacing: 0.02em;
 }
 
 .btn:hover {
   opacity: 0.85;
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
   transform: scale(0.98);
 }
 
 .btn:active {
+  -webkit-transform: scale(0.96);
+  -ms-transform: scale(0.96);
   transform: scale(0.96);
 }
 
@@ -370,11 +453,14 @@ body::before {
 
 /* Special wide card */
 .card-wide {
+  -ms-grid-column-span: 2;
   grid-column: span 2;
 }
 
 .wide-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 20px 1fr;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 16px;
@@ -402,7 +488,11 @@ body::before {
 
 .step-list li {
   counter-increment: steps;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 10px;
   font-size: 0.84rem;
@@ -418,11 +508,18 @@ body::before {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 0.7rem;
   font-weight: 700;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -440,19 +537,26 @@ body::before {
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
 
 .section-title::after {
   content: '';
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 1px;
   background: var(--border);
 }
 
 .tips-grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
@@ -500,8 +604,14 @@ body::before {
   padding: 14px 20px;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -522,6 +632,8 @@ body::before {
   font-size: 0.75rem;
   cursor: pointer;
   font-family: 'Golos Text', sans-serif;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
   transition: color 0.2s;
 }
 
@@ -556,6 +668,8 @@ pre .fn {
 
 /* Tab system */
 .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 4px;
   background: var(--surface);
@@ -563,7 +677,10 @@ pre .fn {
   border-radius: 12px;
   padding: 4px;
   margin-bottom: 24px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -577,6 +694,8 @@ pre .fn {
   background: transparent;
   color: var(--muted);
   font-family: 'Golos Text', sans-serif;
+  -webkit-transition: background 0.2s, color 0.2s;
+  -o-transition: background 0.2s, color 0.2s;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -605,6 +724,7 @@ pre .fn {
 }
 
 .tracker-grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
@@ -616,7 +736,12 @@ pre .fn {
   border-radius: 14px;
   padding: 16px;
   cursor: pointer;
+  -webkit-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
   transition: border-color 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -629,7 +754,11 @@ pre .fn {
   font-size: 0.82rem;
   font-weight: 600;
   margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 6px;
 }
@@ -639,11 +768,19 @@ pre .fn {
   height: 20px;
   border-radius: 50%;
   border: 2px solid var(--border);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 0.7rem;
   margin-left: auto;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -665,6 +802,8 @@ pre .fn {
   background: var(--teal);
   border-radius: 2px;
   width: 0%;
+  -webkit-transition: width 0.5s;
+  -o-transition: width 0.5s;
   transition: width 0.5s;
 }
 
@@ -685,10 +824,17 @@ pre .fn {
   z-index: 10;
   border-top: 1px solid var(--border);
   padding: 24px 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 20px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -702,43 +848,66 @@ footer .accent {
 }
 
 /* Animations */
-@keyframes fadeUp {
+@-webkit-keyframes fadeUp {
   from {
     opacity: 0;
+    -webkit-transform: translateY(20px);
     transform: translateY(20px);
   }
 
   to {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
 .platform-card {
+  -webkit-animation: fadeUp 0.4s ease both;
   animation: fadeUp 0.4s ease both;
 }
 
 .platform-card:nth-child(1) {
+  -webkit-animation-delay: 0.05s;
   animation-delay: 0.05s;
 }
 
 .platform-card:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 
 .platform-card:nth-child(3) {
+  -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 }
 
 .platform-card:nth-child(4) {
+  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 
 .platform-card:nth-child(5) {
+  -webkit-animation-delay: 0.25s;
   animation-delay: 0.25s;
 }
 
 .platform-card:nth-child(6) {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 
@@ -747,13 +916,22 @@ footer .accent {
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 20px;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -769,11 +947,19 @@ footer .accent {
   padding: 32px;
   max-width: 520px;
   width: 100%;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
   transform: scale(0.95);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  -o-transition: transform 0.25s;
   transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
 }
 
 .modal-overlay.open .modal {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -803,8 +989,14 @@ footer .accent {
   border-radius: 50%;
   cursor: pointer;
   font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 

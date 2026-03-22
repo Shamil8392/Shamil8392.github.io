@@ -2,7 +2,7 @@
 site:
   title: СоцЧистка
   description: Очистите свои аккаунты от старого контента
-  url: ''  # Укажите ваш домен после регистрации, например: https://yourdomain.ru
+  url: 'https://shamil8392.github.io/'
   baseurl: 'social-cleaner'
   language: ru
 
