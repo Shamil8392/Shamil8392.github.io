@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://shamil8392.github.io/sitemap.xml
