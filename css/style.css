@@ -371,7 +371,7 @@ body::before {
   background: var(--teal);
 }
 
-.dot-green:nth-child(4) {
+.dot-green__changes {
   visibility: hidden;
   opacity: 0;
 }
