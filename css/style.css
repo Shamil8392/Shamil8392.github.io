@@ -374,6 +374,7 @@ body::before {
 .dot-green:nth-child(4) {
   visibility: hidden;
   opacity: 0;
+}
 
 .dot-yellow {
   background: var(--gold);
